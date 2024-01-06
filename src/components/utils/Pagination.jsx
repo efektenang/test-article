@@ -1,21 +1,13 @@
 export default function Pagination({ page, setPage }) {
-  const autoScroll = () => {
-    scrollTo({
-      behavior: "smooth",
-      top: 0,
-    });
-  };
 
   const handleNextPage = () => {
     setPage((prevState) => prevState + 1);
-    autoScroll();
   };
   const handlePrevPage = () => {
     setPage((prevState) => prevState - 1);
-    autoScroll();
   };
   return (
-    <div className="flex justify-center py-3">
+    <div className="flex justify-end">
       <div className="join">
         {page <= 1 ? (
           <button onClick={handlePrevPage} disabled className="join-item btn">
